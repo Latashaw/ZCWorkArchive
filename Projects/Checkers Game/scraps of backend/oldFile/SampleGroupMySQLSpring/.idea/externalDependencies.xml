@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalDependencies">
+    <plugin id="com.intellij.spring" />
+    <plugin id="com.intellij.spring.boot" />
+    <plugin id="com.intellij.spring.security" />
+    <plugin id="com.intellij.spring.webflow" />
+    <plugin id="com.intellij.spring.ws" />
+  </component>
+</project>

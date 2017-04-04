@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="addresses">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="Interest_Calculator_Database">
+      <Visible>1</Visible>
+    </schema>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <table id="8" parent="2" name="home"/>
+    <table id="9" parent="2" name="people"/>
+    <table id="10" parent="4" name="Accounts"/>
+    <table id="11" parent="4" name="Ledgers"/>
+    <table id="12" parent="4" name="Users"/>
+    <column id="13" parent="8" name="id">
+      <Position>1</Position>
+      <DataType>smallint(5) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="14" parent="8" name="home_number">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="8" name="address">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="16" parent="8" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="17" parent="9" name="first_name">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="9" name="last_name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="9" name="mobile_number">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="9" name="date_of_birth">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="9" name="home_id">
+      <Position>5</Position>
+      <DataType>smallint(5) unsigned|0</DataType>
+    </column>
+    <key id="22" parent="9" name="PRIMARY">
+      <ColNames>first_name
+last_name
+date_of_birth</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="23" parent="10" name="Id">
+      <Position>1</Position>
+      <DataType>int(100) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="10" name="Account_Holder">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="10" name="Account_Number">
+      <Position>3</Position>
+      <DataType>int(30) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="10" name="Account_Type">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="10" name="Balance">
+      <Position>5</Position>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="10" name="Interest_Rate">
+      <Position>6</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="10" name="Overdraft_Penalty">
+      <Position>7</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="10" name="Required_Minimum_Balance">
+      <Position>8</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="10" name="Is_Minimum_Balance_Required">
+      <Position>9</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="10" name="Ledger_Id">
+      <Position>10</Position>
+      <DataType>int(255) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <index id="33" parent="10" name="Id">
+      <ColNames>Id</ColNames>
+    </index>
+    <key id="34" parent="10" name="PRIMARY">
+      <ColNames>Ledger_Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="35" parent="10" name="accounts_ibfk_1">
+      <ColNames>Id</ColNames>
+      <RefSchemaName>interest_calculator_database</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="36" parent="11" name="Ledger_Id">
+      <Position>1</Position>
+      <DataType>int(255) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="11" name="Transaction_Id">
+      <Position>2</Position>
+      <DataType>int(255) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="38" parent="11" name="Transaction_Number">
+      <Position>3</Position>
+      <DataType>int(255) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="39" parent="11" name="Ledger_Id">
+      <ColNames>Ledger_Id</ColNames>
+    </index>
+    <key id="40" parent="11" name="PRIMARY">
+      <ColNames>Transaction_Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="41" parent="11" name="ledgers_ibfk_1">
+      <ColNames>Ledger_Id</ColNames>
+      <RefSchemaName>interest_calculator_database</RefSchemaName>
+      <RefTableName>Accounts</RefTableName>
+      <RefColNames>Ledger_Id</RefColNames>
+    </foreign-key>
+    <column id="42" parent="12" name="Id">
+      <Position>1</Position>
+      <DataType>int(100) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="43" parent="12" name="Username">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="12" name="Password">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="45" parent="12" name="PRIMARY">
+      <ColNames>Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
